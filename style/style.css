@@ -9,7 +9,7 @@ body {
     background-color: rgb(46, 46, 46);
     text-align: center;
     color: white;
-    background-image:url(imageFolder/background.jpg);
+    background-image:url(../imageFolder/background.jpg);
     background-position: center;
     background-size: 2800px;
 }

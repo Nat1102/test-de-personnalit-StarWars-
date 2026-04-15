@@ -1,0 +1,31 @@
+.titre {
+    text-align: center;
+    color: red;
+    text-shadow: 3px 4px 4px black;
+
+} 
+
+body {
+    background-color: rgb(46, 46, 46);
+    text-align: center;
+    color: white;
+    background-image:url(/imageFolder/background.jpg);
+    background-position: center;
+    background-size: 2800px;
+}
+
+.box {
+    background-color: rgb(24, 23, 23);
+    padding: 3px;
+    border-radius: 15px;
+}
+
+.bouton {
+    color: white;
+    background-color: red;
+    box-shadow: 3px 4px 4px black;
+}
+
+.cacher {
+    visibility: hidden;
+}

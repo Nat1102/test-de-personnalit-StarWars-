@@ -52,7 +52,3 @@ const FIN = {
 
 //tableaux de question
 const listeQuestion =[question1, question2, question3, FIN]
-
-
-//tableaux de question
-const listeQuestion =[question1, question2, question3, FIN]

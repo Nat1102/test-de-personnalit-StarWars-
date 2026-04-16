@@ -2,9 +2,13 @@ let textQuestion = document.getElementById("textQuestion")
 
 let btnRadio1 = document.getElementById("btnRadio1")
 let btnRadio2 = document.getElementById("btnRadio2")
+let btnRadio3 = document.getElementById("btnRadio3")
+let btnRadio4 = document.getElementById("btnRadio4")
 
 let labelQuestion1 = document.getElementById("labelRéponse1")
 let labelQuestion2 = document.getElementById("labelRéponse2")
+let labelQuestion3 = document.getElementById("labelRéponse3")
+let labelQuestion4 = document.getElementById("labelRéponse4")
 
 let btnConfirmer = document.getElementById("btnConfirmer")
 
@@ -19,21 +23,13 @@ let boiteNomPerso = document.getElementById("boiteNomPerso")
 let tabDifPerso = []
 
 
-btnRadio1.addEventListener("change", () => {
-    console.log("BtnRadio1")
-
-})
-
-btnRadio2.addEventListener("change", () => {
-    console.log("BtnRadio2")
-})
-
-
 //initialisation de la question
 
 textQuestion.innerText = listeQuestion[0].question
 labelQuestion1.innerText = listeQuestion[0].réponse1
 labelQuestion2.innerText = listeQuestion[0].réponse2
+labelQuestion3.innerText = listeQuestion[0].réponse3
+labelQuestion4.innerText = listeQuestion[0].réponse4
 
 
 function initialiserQuestion() {
@@ -45,6 +41,8 @@ function initialiserQuestion() {
         textQuestion.innerText = listeQuestion[index].question
         labelQuestion1.innerText = listeQuestion[index].réponse1
         labelQuestion2.innerText = listeQuestion[index].réponse2
+        labelQuestion3.innerText = listeQuestion[index].réponse3
+        labelQuestion4.innerText = listeQuestion[index].réponse4
 
         aditionPoint(nmQuestion)
 
@@ -55,12 +53,16 @@ function initialiserQuestion() {
 
         btnRadio1.checked = false
         btnRadio2.checked = false
+        btnRadio3.checked = false
+        btnRadio4.checked = false
 
         if (index === listeQuestion.length) {
             textScore.textContent = `votre score et de SAGESSE: ${scoreSagesse} COURAGE: ${scoreCourage} EGOISME: ${scoreégoisme} GENEROSITE: ${scoreGénerosité} HUMOUR: ${scoreHumour} NAIFTE: ${scoreNaifté} AMBITIEUX: ${scoreAmbitieux} HUMILITE: ${scoreHumilité}`
             
             btnRadio1.classList.add("cacher")
             btnRadio2.classList.add("cacher")
+            btnRadio3.classList.add("cacher")
+            btnRadio4.classList.add("cacher")
             questionText.classList.add("cacher")
             btnConfirmer.classList.add("cacher")
             choixPersonage()
@@ -91,7 +93,8 @@ function aditionPoint(nmQuestion) {
         scoreAmbitieux += listeQuestion[nmQuestion].bonnus1[6]
         scoreHumilité += listeQuestion[nmQuestion].bonnus1[7]
         console.log("btn1")
-    } else {
+    } 
+    if (btnRadio2.checked === true){
         scoreSagesse += listeQuestion[nmQuestion].bonnus2[0]
         scoreCourage += listeQuestion[nmQuestion].bonnus2[1]
         scoreégoisme += listeQuestion[nmQuestion].bonnus2[2]
@@ -102,6 +105,28 @@ function aditionPoint(nmQuestion) {
         scoreHumilité += listeQuestion[nmQuestion].bonnus2[7]
         console.log("btn2")
     }
+    if (btnRadio3.checked === true) {
+        scoreSagesse += listeQuestion[nmQuestion].bonnus3[0]
+        scoreCourage += listeQuestion[nmQuestion].bonnus3[1]
+        scoreégoisme += listeQuestion[nmQuestion].bonnus3[2]
+        scoreGénerosité += listeQuestion[nmQuestion].bonnus3[3]
+        scoreHumour += listeQuestion[nmQuestion].bonnus3[4]
+        scoreNaifté += listeQuestion[nmQuestion].bonnus3[5]
+        scoreAmbitieux += listeQuestion[nmQuestion].bonnus3[6]
+        scoreHumilité += listeQuestion[nmQuestion].bonnus3[7]
+        console.log("btn3")
+    } 
+    if (btnRadio4.checked === true) {
+        scoreSagesse += listeQuestion[nmQuestion].bonnus4[0]
+        scoreCourage += listeQuestion[nmQuestion].bonnus4[1]
+        scoreégoisme += listeQuestion[nmQuestion].bonnus4[2]
+        scoreGénerosité += listeQuestion[nmQuestion].bonnus4[3]
+        scoreHumour += listeQuestion[nmQuestion].bonnus4[4]
+        scoreNaifté += listeQuestion[nmQuestion].bonnus4[5]
+        scoreAmbitieux += listeQuestion[nmQuestion].bonnus4[6]
+        scoreHumilité += listeQuestion[nmQuestion].bonnus4[7]
+        console.log("btn4")
+    } 
     
 
 

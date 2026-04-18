@@ -36,41 +36,47 @@ function initialiserQuestion() {
    let index = 1
    let nmQuestion = 0
    
+
+    
     btnConfirmer.addEventListener("click", () => {
+        if(btnRadio1.checked === true || btnRadio2.checked === true || btnRadio3.checked === true || btnRadio4.checked === true) {
+            textQuestion.innerText = listeQuestion[index].question
+            labelQuestion1.innerText = listeQuestion[index].réponse1
+            labelQuestion2.innerText = listeQuestion[index].réponse2
+            labelQuestion3.innerText = listeQuestion[index].réponse3
+            labelQuestion4.innerText = listeQuestion[index].réponse4
 
-        textQuestion.innerText = listeQuestion[index].question
-        labelQuestion1.innerText = listeQuestion[index].réponse1
-        labelQuestion2.innerText = listeQuestion[index].réponse2
-        labelQuestion3.innerText = listeQuestion[index].réponse3
-        labelQuestion4.innerText = listeQuestion[index].réponse4
+            aditionPoint(nmQuestion)
 
-        aditionPoint(nmQuestion)
+            index++
+            nmQuestion++
 
-        index++
-        nmQuestion++
+            numeroQuestionText.textContent = index
 
-        numeroQuestionText.textContent = index
+            btnRadio1.checked = false
+            btnRadio2.checked = false
+            btnRadio3.checked = false
+            btnRadio4.checked = false
 
-        btnRadio1.checked = false
-        btnRadio2.checked = false
-        btnRadio3.checked = false
-        btnRadio4.checked = false
+            if (index === listeQuestion.length) {
+                textScore.textContent = `votre score et de SAGESSE: ${scoreSagesse} COURAGE: ${scoreCourage} EGOISME: ${scoreégoisme} GENEROSITE: ${scoreGénerosité} HUMOUR: ${scoreHumour} NAIFTE: ${scoreNaifté} AMBITIEUX: ${scoreAmbitieux} HUMILITE: ${scoreHumilité}`
 
-        if (index === listeQuestion.length) {
-            textScore.textContent = `votre score et de SAGESSE: ${scoreSagesse} COURAGE: ${scoreCourage} EGOISME: ${scoreégoisme} GENEROSITE: ${scoreGénerosité} HUMOUR: ${scoreHumour} NAIFTE: ${scoreNaifté} AMBITIEUX: ${scoreAmbitieux} HUMILITE: ${scoreHumilité}`
-            
-            btnRadio1.classList.add("cacher")
-            btnRadio2.classList.add("cacher")
-            btnRadio3.classList.add("cacher")
-            btnRadio4.classList.add("cacher")
-            questionText.classList.add("cacher")
-            btnConfirmer.classList.add("cacher")
-            choixPersonage()
+                btnRadio1.classList.add("cacher")
+                btnRadio2.classList.add("cacher")
+                btnRadio3.classList.add("cacher")
+                btnRadio4.classList.add("cacher")
+                questionText.classList.add("cacher")
+                btnConfirmer.classList.add("cacher")
+                choixPersonage()
+            }
         }
-        
-
+    
+    
 })
 }
+
+
+
 //sagese, courage, égoisme, génerosité, humour, naifté, ambitieux, humilité,
 let scoreSagesse = 0
 let scoreCourage = 0
@@ -211,5 +217,8 @@ function lancerLeQuiz() {
 }
 
 lancerLeQuiz()
+
+
+
 
 

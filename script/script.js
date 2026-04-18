@@ -20,6 +20,8 @@ let textScore = document.getElementById("textScore")
 let TextNomPerso = document.getElementById("tonPersoTXT")
 let boiteNomPerso = document.getElementById("boiteNomPerso")
 
+let whatsBtn = document.getElementById("whatsbtn")
+
 let tabDifPerso = []
 
 
@@ -67,6 +69,7 @@ function initialiserQuestion() {
                 btnRadio4.classList.add("cacher")
                 questionText.classList.add("cacher")
                 btnConfirmer.classList.add("cacher")
+
                 choixPersonage()
             }
         }
@@ -203,14 +206,25 @@ function choixPersonage() {
     boiteNomPerso.classList.remove("cacher")
 
 
+    //share btn
+    whatsBtn.addEventListener("click", () => {
+        shareBtn(PersoDuJoueur)
+})
+
+
+}
+
+
+function shareBtn(PersoDuJoueur) {
+    window.open(`https://wa.me/?text=${window.location.href} je suis ${PersoDuJoueur}`)
 }
 
 
 
 
 
-
 function lancerLeQuiz() {
+    
     initialiserQuestion()
     
     

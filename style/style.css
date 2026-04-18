@@ -38,3 +38,10 @@ body {
 .cacher {
     visibility: hidden;
 }
+
+.whatsBtn {
+    background-color: lime;
+    color: black;
+    width: 60px;
+    height: 60px;
+}

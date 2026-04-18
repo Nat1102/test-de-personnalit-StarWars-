@@ -205,6 +205,8 @@ function choixPersonage() {
 
     boiteNomPerso.classList.remove("cacher")
 
+    whatsBtn.classList.remove("cacher")
+
 
     //share btn
     whatsBtn.addEventListener("click", () => {
@@ -216,7 +218,7 @@ function choixPersonage() {
 
 
 function shareBtn(PersoDuJoueur) {
-    window.open(`https://wa.me/?text=${window.location.href} je suis ${PersoDuJoueur}`)
+    window.open(`https://wa.me/?text=je suis ${PersoDuJoueur} sur ${window.location.href} test toi aussi ;)`)
 }
 
 
